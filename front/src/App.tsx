@@ -1,27 +1,20 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Veiculo from "./pages/veiculo/Veiculo";
 
 function App() {
-    const [name, setname] = useState<string>("");
-
-    const sub = (e: ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        axios.post("http://127.0.0.1:8000/", { name });
-    };
-
     return (
         <div className="App">
-            <form onSubmit={sub}>
-                <input
-                    type="text"
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        setname(e.target.value)
-                    }
-                />
-                <button type="submit">send</button>
-            </form>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/veiculo/:id" element={<Veiculo />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

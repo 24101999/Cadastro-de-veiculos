@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/', [Homecontroller::class, 'index']);
 Route::get('/', [Homecontroller::class, 'index']);
+Route::get('/veiculos', [Homecontroller::class, 'get']);
+Route::get('/veiculos/{id?}', [Homecontroller::class, 'item']);
+Route::delete('/delete/{id?}', [Homecontroller::class, 'destroy']);
