@@ -5,6 +5,7 @@ import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Veiculo from "./pages/veiculo/Veiculo";
+import Edit from "./pages/edit/Edit";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/veiculo/:id" element={<Veiculo />} />
+                    <Route path="/edit/:id" element={<Edit />} />
                 </Routes>
             </BrowserRouter>
         </div>
