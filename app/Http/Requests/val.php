@@ -24,10 +24,10 @@ class val extends FormRequest
     public function rules()
     {
         return [
-            "nome" => "string",
-            "marca" => "string",
-            "ano" => "string",
-            'img' => 'img',
+            "nome" => "required|string",
+            "marca" => "required|string",
+            "ano" => "required|string",
+            'img' => 'required|file',
         ];
     }
 }

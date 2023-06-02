@@ -1,11 +1,9 @@
-import React, { ChangeEvent, useState, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Veiculo from "./pages/veiculo/Veiculo";
 import Edit from "./pages/edit/Edit";
+import Res from "./Res";
 
 function App() {
     return (
@@ -15,6 +13,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/veiculo/:id" element={<Veiculo />} />
                     <Route path="/edit/:id" element={<Edit />} />
+                    <Route path="/test" element={<Res />} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./Veiculo.module.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { d } from "../../interfaces";
 type Props = {};
-
-interface d {
-    nome?: string;
-    marca?: string;
-    ano?: number;
-}
 
 const Veiculo = (props: Props) => {
     const [dado, setDado] = useState<d>();
@@ -25,6 +20,8 @@ const Veiculo = (props: Props) => {
 
     return (
         <div className={styles.veiculo}>
+            <h2>Foto</h2>
+            <img src={dado ? dado.path : ""} height={300} alt="" />
             <h2>nome</h2>
             <p>{dado ? dado.nome : ""}</p>
             <h2>marca</h2>

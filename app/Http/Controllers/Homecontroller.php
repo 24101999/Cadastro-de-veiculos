@@ -44,9 +44,15 @@ class Homecontroller extends Controller
     public function update(val $request)
     {
 
+        $val = $request->validated();
+
+        $val = $request->safe()->only(['nome', 'marca', 'ano', 'path']);
+
         $up = Veiculo::find($request->id);
         $up->img = $request->img;
+
         $img = $up->img->store('imagens', 'public');
+
         $link = asset("storage/$img");
         $up->nome = $request->nome;
         $up->marca = $request->marca;
@@ -55,9 +61,9 @@ class Homecontroller extends Controller
 
         $up->save();
 
-        // if ($up->nome and $up->marca and $up->ano) {
-        // } else {
-        //     echo false;
-        // }
+        if ($up->nome and $up->marca and $up->ano) {
+        } else {
+            echo false;
+        }
     }
 }

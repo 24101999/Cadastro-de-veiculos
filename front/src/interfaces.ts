@@ -6,9 +6,3 @@ export interface d{
     img?:string;
     path?:string;
 }
-export interface dados {
-    id?: number;
-    nome?: string;
-    marca?: string;
-    ano?: number;
-}

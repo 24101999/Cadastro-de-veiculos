@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import styles from "./Edit.module.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { d } from "../../interfaces";
 type Props = {};
 
 const Edit = (props: Props) => {
@@ -9,15 +10,17 @@ const Edit = (props: Props) => {
     const [marca, setMarca] = useState<string>("");
     const [ano, setAno] = useState<string>("");
     const [img, setImg] = useState<File | undefined>();
+    const [dados, setDados] = useState<d>();
     const param = useParams();
     const id = param.id;
     const sub = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        axios.put(
+        axios.post(
             `http://127.0.0.1:8000/edit/${id}`,
             { nome, marca, ano, img },
             {
                 headers: {
+                    // Authorization: "",
                     "Content-Type": "multipart/form-data",
                 },
             }

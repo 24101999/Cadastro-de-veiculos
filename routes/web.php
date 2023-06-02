@@ -19,5 +19,5 @@ Route::get('/', [Homecontroller::class, 'index']);
 Route::get('/veiculos', [Homecontroller::class, 'get']);
 Route::get('/veiculos/{id?}', [Homecontroller::class, 'item']);
 Route::delete('/delete/{id?}', [Homecontroller::class, 'destroy']);
-Route::put('/edit/{id?}', [Homecontroller::class, 'update']);
+Route::post('/edit/{id?}', [Homecontroller::class, 'update']);
 Route::get('/edit/{id?}', [Homecontroller::class, 'update']);
