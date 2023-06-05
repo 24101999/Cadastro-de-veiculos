@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import styles from "./Edit.module.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { d } from "../../interfaces";
 type Props = {};
 
@@ -11,20 +11,26 @@ const Edit = (props: Props) => {
     const [ano, setAno] = useState<string>("");
     const [img, setImg] = useState<File | undefined>();
     const [dados, setDados] = useState<d>();
+    const nav = useNavigate();
     const param = useParams();
     const id = param.id;
     const sub = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        axios.post(
-            `http://127.0.0.1:8000/edit/${id}`,
-            { nome, marca, ano, img },
-            {
-                headers: {
-                    // Authorization: "",
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
+        axios
+            .post(
+                `http://127.0.0.1:8000/edit/${id}`,
+                { nome, marca, ano, img },
+                {
+                    headers: {
+                        // Authorization: "",
+                        "Content-Type": "multipart/form-data",
+                    },
+                }
+            )
+            .catch(() => {
+                nav(`edit/${id}`);
+            });
+        nav("/");
     };
 
     return (

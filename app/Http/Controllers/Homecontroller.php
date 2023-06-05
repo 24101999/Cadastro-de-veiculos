@@ -9,13 +9,16 @@ use Illuminate\Http\Request;
 
 class Homecontroller extends Controller
 {
-    public function index(val $request)
+    public function index()
+    {
+        // header('Access-Control-Allow-Origin: *');
+        echo Veiculo::all();
+    }
+    public function insert(val $request)
     {
 
         $dados = new Veiculo;
-
         $dados->img = $request->img;
-
         $img = $dados->img->store('imagens', 'public');
         $link = asset("storage/$img");
         $dados->nome = $request->nome;
@@ -23,12 +26,6 @@ class Homecontroller extends Controller
         $dados->ano = $request->ano;
         $dados->path = $link;
         $dados->save();
-    }
-    public function get()
-    {
-        $all = Veiculo::all();
-
-        echo $all;
     }
     public function item($id)
     {

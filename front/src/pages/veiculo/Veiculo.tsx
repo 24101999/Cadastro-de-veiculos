@@ -13,7 +13,7 @@ const Veiculo = (props: Props) => {
     const id = param.id;
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/veiculos/${id}`).then((r) => {
+        axios.get(`http://127.0.0.1:8000/${id}`).then((r) => {
             setDado(r.data);
         });
     }, []);

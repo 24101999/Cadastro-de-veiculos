@@ -21,14 +21,31 @@ return [
 
     'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['*'],
 
-    'allowed_headers' => ['X-Custom-Header', 'Upgrade-Insecure-Requests', '*', 'Content-Type'],
+    'allowed_headers' => ['X-Custom-Header', 'Upgrade-Insecure-Requests', '*'],
 
     'exposed_headers' => [],
 
     'max_age' => 0,
 
     'supports_credentials' => false,
+
+    // 'paths' => ['*'],
+    // // 'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    // 'allowed_methods' => ['POST', 'GET', 'DELETE', 'PUT'],
+
+    // 'allowed_origins' => ['*'],
+
+    // 'allowed_origins_patterns' => [],
+
+    // 'allowed_headers' => ['*'],
+
+    // 'exposed_headers' => ['Access-Control-Allow-Origin'],
+
+    // 'max_age' => 0,
+
+    // 'supports_credentials' => false,
 
 ];

@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Homecontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/', [Homecontroller::class, 'index']);
+// Route::post('/', [Homecontroller::class, 'index']);
 Route::get('/', [Homecontroller::class, 'index']);
-Route::get('/veiculos', [Homecontroller::class, 'get']);
-Route::get('/veiculos/{id?}', [Homecontroller::class, 'item']);
+Route::get('/insert', [Homecontroller::class, 'insert']);
+Route::post('/insert', [Homecontroller::class, 'insert']);
+Route::get('/{id?}', [Homecontroller::class, 'item']);
 Route::delete('/delete/{id?}', [Homecontroller::class, 'destroy']);
 Route::post('/edit/{id?}', [Homecontroller::class, 'update']);
 Route::get('/edit/{id?}', [Homecontroller::class, 'update']);

@@ -5,11 +5,11 @@ type Props = {};
 const Res = (props: Props) => {
     const [dados, setDados] = useState<Array<string>>();
 
-    useEffect(() => {
-        axios.get("http://127.0.0.1:8000/veiculos").then((r) => {
-            console.log(r.data);
-        });
-    }, []);
+    // useEffect(() => {
+    //     axios.get("http://127.0.0.1:8000/veiculos").then((r) => {
+    //         console.log(r.data);
+    //     });
+    // }, []);
 
     return <div>Res</div>;
 };
