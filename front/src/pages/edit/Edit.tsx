@@ -11,11 +11,16 @@ const Edit = (props: Props) => {
     const [ano, setAno] = useState<string>("");
     const [img, setImg] = useState<File | undefined>();
     const [dados, setDados] = useState<d>();
+    const [msg, setMsg] = useState<string>("");
     const nav = useNavigate();
     const param = useParams();
     const id = param.id;
     const sub = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!nome || !marca || !ano) {
+            setMsg("Campo vazio");
+            return;
+        }
         axios
             .post(
                 `http://127.0.0.1:8000/edit/${id}`,
@@ -27,10 +32,13 @@ const Edit = (props: Props) => {
                     },
                 }
             )
+            .then((res) => {
+                nav("/");
+            })
             .catch(() => {
-                nav(`edit/${id}`);
+                alert("Não podee usar caracter especial:!@#$%¨&*");
+                return;
             });
-        nav("/");
     };
 
     return (
@@ -49,6 +57,7 @@ const Edit = (props: Props) => {
                 <label>
                     <span>Nome</span>
                     <input
+                        placeholder={msg}
                         type="text"
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setNome(e.target.value)
@@ -58,6 +67,7 @@ const Edit = (props: Props) => {
                 <label>
                     <span>Marca</span>
                     <input
+                        placeholder={msg}
                         type="text"
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setMarca(e.target.value)
@@ -67,6 +77,7 @@ const Edit = (props: Props) => {
                 <label>
                     <span>Ano</span>
                     <input
+                        placeholder={msg}
                         type="text"
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setAno(e.target.value)

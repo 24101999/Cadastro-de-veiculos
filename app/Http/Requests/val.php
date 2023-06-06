@@ -26,7 +26,7 @@ class val extends FormRequest
         return [
             "nome" => "required|string",
             "marca" => "required|string",
-            "ano" => "required|string",
+            "ano" => "required|numeric",
             'img' => 'required|file',
         ];
     }

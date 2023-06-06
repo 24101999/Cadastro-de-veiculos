@@ -1,1 +1,32 @@
-/*# sourceMappingURL=Veiculo.module.css.map */
+.veiculo {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.veiculo h2 {
+  margin: 0;
+}
+
+.all {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7215686275);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}/*# sourceMappingURL=Veiculo.module.css.map */

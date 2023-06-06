@@ -1,4 +1,8 @@
 .home {
+    background-image: url("../../assets/car-604019_1920.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +17,24 @@
         flex-direction: column;
         align-items: center;
         gap: 5px;
+        input {
+            background: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+            color: #fff;
+            &::placeholder {
+                color: #ffffffb7;
+            }
+        }
+        button {
+            background: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+            padding: 10px 20px;
+            color: #fff;
+        }
         label {
             display: flex;
             flex-direction: column;
@@ -24,6 +46,8 @@
         border: 1px solid;
         padding: 1rem;
         border-radius: 5px;
+        background-color: #0000009c;
+        color: #fff;
     }
     .veiculos {
         width: 50%;
@@ -34,9 +58,14 @@
         gap: 1rem;
     }
     .veiculo {
+        background-color: #0000009c;
+        color: #fff;
         padding: 1rem;
         border: 1px solid;
         border-radius: 5px;
+        &::-webkit-scrollbar {
+            background-color: none;
+        }
         img {
             max-width: 100%;
         }
@@ -46,8 +75,7 @@
             &:hover {
                 transition: all 0.4s;
                 color: blue;
-                background-color: #00000038;
-
+                background-color: #cececea9;
                 border-radius: 50%;
             }
         }
@@ -73,6 +101,7 @@
 // modal
 // modal
 .modal {
+    flex-direction: column;
     height: 100%;
     opacity: 1;
     position: absolute;
@@ -84,13 +113,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .closed {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-    }
+    transition: all 0.4s;
+}
+.button {
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+.closed {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    padding: 0;
+    border: none;
+    color: #fff;
 }
 .none {
+    .button {
+        padding: 10px 20px;
+    }
+    flex-direction: column;
+    transition: all 0.4s;
     .closed {
         position: absolute;
         top: 5px;

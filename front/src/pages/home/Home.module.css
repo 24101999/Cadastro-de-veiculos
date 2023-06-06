@@ -1,4 +1,8 @@
 .home {
+  background-image: url("../../assets/car-604019_1920.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +19,27 @@
   align-items: center;
   gap: 5px;
 }
+.home form input {
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+}
+.home form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7176470588);
+}
+.home form input::placeholder {
+  color: rgba(255, 255, 255, 0.7176470588);
+}
+.home form button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 20px;
+  color: #fff;
+}
 .home form label {
   display: flex;
   flex-direction: column;
@@ -25,6 +50,8 @@
   border: 1px solid;
   padding: 1rem;
   border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6117647059);
+  color: #fff;
 }
 .home .veiculos {
   width: 50%;
@@ -35,9 +62,14 @@
   gap: 1rem;
 }
 .home .veiculo {
+  background-color: rgba(0, 0, 0, 0.6117647059);
+  color: #fff;
   padding: 1rem;
   border: 1px solid;
   border-radius: 5px;
+}
+.home .veiculo::-webkit-scrollbar {
+  background-color: none;
 }
 .home .veiculo img {
   max-width: 100%;
@@ -49,7 +81,7 @@
 .home .veiculo svg:hover {
   transition: all 0.4s;
   color: blue;
-  background-color: rgba(0, 0, 0, 0.2196078431);
+  background-color: rgba(206, 206, 206, 0.662745098);
   border-radius: 50%;
 }
 .home .veiculo button {
@@ -70,6 +102,7 @@
   }
 }
 .modal {
+  flex-direction: column;
   height: 100%;
   opacity: 1;
   position: absolute;
@@ -81,14 +114,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s;
 }
-.modal .closed {
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.closed {
   position: absolute;
   top: 5px;
   right: 5px;
+  font-size: 30px;
+  padding: 0;
+  border: none;
+  color: #fff;
 }
 
 .none {
+  flex-direction: column;
+  transition: all 0.4s;
   height: 100%;
   opacity: 0;
   position: absolute;
@@ -100,6 +148,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.none .button {
+  padding: 10px 20px;
 }
 .none .closed {
   position: absolute;

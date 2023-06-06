@@ -1,2 +1,39 @@
 .edit {
+    background-image: url("../../assets/car-race-438467_1920.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background-color: #0000005e;
+        border-radius: 5px;
+        color: #fff;
+        input {
+            background: none;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid white;
+            color: #fff;
+            &::placeholder {
+                color: #ffffffc9;
+            }
+        }
+    }
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

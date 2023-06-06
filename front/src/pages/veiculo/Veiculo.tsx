@@ -19,15 +19,27 @@ const Veiculo = (props: Props) => {
     }, []);
 
     return (
-        <div className={styles.veiculo}>
-            <h2>Foto</h2>
-            <img src={dado ? dado.path : ""} height={300} alt="" />
-            <h2>nome</h2>
-            <p>{dado ? dado.nome : ""}</p>
-            <h2>marca</h2>
-            <p>{dado ? dado.marca : ""}</p>
-            <h2>ano</h2>
-            <p>{dado ? dado.ano : ""}</p>
+        <div
+            className={styles.veiculo}
+            style={{ backgroundImage: `url(${dado ? dado.path : ""})` }}
+        >
+            <div className={styles.all}>
+                <img src={dado ? dado.path : ""} height={300} alt="" />
+                <div className={styles.infos}>
+                    <div className="">
+                        <h2>Nome</h2>
+                        <p>{dado ? dado.nome : ""}</p>
+                    </div>
+                    <div className="">
+                        <h2>Marca</h2>
+                        <p>{dado ? dado.marca : ""}</p>
+                    </div>
+                    <div className="">
+                        <h2>Ano</h2>
+                        <p>{dado ? dado.ano : ""}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

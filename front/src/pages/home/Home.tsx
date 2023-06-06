@@ -16,6 +16,7 @@ const Home = (props: Props) => {
     const [img, setImg] = useState<File | undefined>();
     const [veiculo, setVeiculo] = useState<Array<d>>();
     const [modal, setModal] = useState<string>(styles.none);
+    const [msg, setMsg] = useState<string>("");
     const nav = useNavigate();
     const [id, setId] = useState<number>();
 
@@ -49,11 +50,15 @@ const Home = (props: Props) => {
         close();
         setTimeout(() => {
             get();
-        }, 800);
+        }, 500);
     };
 
     const sub = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!nome || !marca || !ano) {
+            setMsg("Campo vazio");
+            return;
+        }
         axios
             .post(
                 "http://localhost:8000/insert",
@@ -70,16 +75,24 @@ const Home = (props: Props) => {
                 } else {
                     console.log("erro");
                 }
+            })
+            .catch(() => {
+                alert("Não pode usar caracter especial:!@#$%¨&*");
             });
+        setAno("");
+        setMarca("");
+        setNome("");
+        setImg(undefined);
         setTimeout(() => {
             get();
-        }, 1000);
+        }, 500);
     };
     return (
         <>
             <Modal md={modal} cl={close} del={destroy} />
             <div className={styles.home}>
                 <div className={styles.cadastro}>
+                    <h1 style={{ textAlign: "center" }}>Cadastro</h1>
                     <form onSubmit={sub}>
                         <label>
                             <span>Img</span>
@@ -96,6 +109,8 @@ const Home = (props: Props) => {
                         <label>
                             <span>Nome</span>
                             <input
+                                placeholder={msg}
+                                value={nome}
                                 type="text"
                                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                     setNome(e.target.value)
@@ -105,6 +120,8 @@ const Home = (props: Props) => {
                         <label>
                             <span>Marca</span>
                             <input
+                                placeholder={msg}
+                                value={marca}
                                 type="text"
                                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                     setMarca(e.target.value)
@@ -114,6 +131,8 @@ const Home = (props: Props) => {
                         <label>
                             <span>Ano</span>
                             <input
+                                placeholder={msg}
+                                value={ano}
                                 type="text"
                                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                     setAno(e.target.value)
