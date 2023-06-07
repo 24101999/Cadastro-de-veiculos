@@ -1,0 +1,59 @@
+.login {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url("../../assets/porsche-1851246_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login a {
+  color: #fff;
+  text-decoration: none;
+}
+.login a:hover {
+  color: rgba(255, 255, 255, 0.662745098);
+}
+.login form {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5607843137);
+  gap: 5px;
+}
+.login form input {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 5px;
+}
+.login form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7607843137);
+}
+.login form input::placeholder {
+  color: rgba(255, 255, 255, 0.7607843137);
+}
+.login form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.login form button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 20px;
+}/*# sourceMappingURL=Login.module.css.map */

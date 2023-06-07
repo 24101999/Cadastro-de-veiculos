@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Homecontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::post('/', [Homecontroller::class, 'index']);
+Route::post('/login', [AdminController::class, 'index']);
+Route::post('/get', [AdminController::class, 'index']);
 Route::get('/', [Homecontroller::class, 'index']);
 Route::get('/insert', [Homecontroller::class, 'insert']);
 Route::post('/insert', [Homecontroller::class, 'insert']);

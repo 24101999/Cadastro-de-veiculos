@@ -29,6 +29,13 @@ const Home = (props: Props) => {
             .catch((err) => {
                 console.log(err);
             });
+
+        const key = sessionStorage.getItem("key");
+        if (key == localStorage.getItem("key")) {
+            nav("/");
+        } else {
+            nav("/login");
+        }
     }, []);
 
     const open = (e: number | undefined) => {

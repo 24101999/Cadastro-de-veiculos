@@ -6,6 +6,8 @@ import Edit from "./pages/edit/Edit";
 import Res from "./Res";
 import Header from "./pages/header/Header";
 import Footer from "./pages/footer/Footer";
+import Login from "./pages/admin/Login";
+import Cadastro from "./pages/admin/Cadastro";
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/veiculo/:id" element={<Veiculo />} />
                     <Route path="/edit/:id" element={<Edit />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
                     <Route path="/test" element={<Res />} />
                 </Routes>
             </BrowserRouter>
