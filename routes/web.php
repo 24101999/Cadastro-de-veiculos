@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/cadastro', [AdminController::class, 'cadastro']);
+Route::get('/cadastro', [AdminController::class, 'cadastro']);
 Route::post('/login', [AdminController::class, 'index']);
 Route::post('/get', [AdminController::class, 'index']);
 Route::get('/', [Homecontroller::class, 'index']);

@@ -7,8 +7,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.veiculo img {
+  border-radius: 5px;
+}
 .veiculo h2 {
   margin: 0;
+}
+
+.voltar {
+  position: absolute;
+  z-index: 50;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
 }
 
 .all {

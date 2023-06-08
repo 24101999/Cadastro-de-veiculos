@@ -7,9 +7,11 @@ import { BiShow, BiEditAlt } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import Header from "../header/Header";
 import Modal from "./Modal";
+import Loading from "../loading/Loading";
 type Props = {};
 
 const Home = (props: Props) => {
+    const [load, setLoad] = useState<boolean>(false);
     const [nome, setNome] = useState<string>("");
     const [marca, setMarca] = useState<string>("");
     const [ano, setAno] = useState<string>("");
@@ -21,15 +23,17 @@ const Home = (props: Props) => {
     const [id, setId] = useState<number>();
 
     useEffect(() => {
-        axios
-            .get("http://localhost:8000/")
-            .then((res) => {
-                setVeiculo(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-
+        setTimeout(() => {
+            axios
+                .get("http://localhost:8000/")
+                .then((res) => {
+                    setVeiculo(res.data);
+                    setLoad(true);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }, 1000);
         const key = sessionStorage.getItem("key");
         if (key == localStorage.getItem("key")) {
             nav("/");
@@ -99,7 +103,7 @@ const Home = (props: Props) => {
             <Modal md={modal} cl={close} del={destroy} />
             <div className={styles.home}>
                 <div className={styles.cadastro}>
-                    <h1 style={{ textAlign: "center" }}>Cadastro</h1>
+                    <h1 style={{ textAlign: "center" }}>Cadastro de veiculo</h1>
                     <form onSubmit={sub}>
                         <label>
                             <span>Img</span>
@@ -146,7 +150,7 @@ const Home = (props: Props) => {
                                 }
                             />
                         </label>
-                        <button type="submit">send</button>
+                        <button type="submit">Cadastrar</button>
                     </form>
                 </div>
                 <div className={styles.veiculos}>
@@ -181,6 +185,7 @@ const Home = (props: Props) => {
                         : ""}
                 </div>
             </div>
+            {!load ? <Loading /> : ""}
         </>
     );
 };

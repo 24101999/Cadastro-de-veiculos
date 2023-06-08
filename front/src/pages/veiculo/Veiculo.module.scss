@@ -6,9 +6,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    img {
+        border-radius: 5px;
+    }
     h2 {
         margin: 0;
     }
+}
+.voltar {
+    position: absolute;
+    z-index: 50;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
 }
 .all {
     height: 100%;

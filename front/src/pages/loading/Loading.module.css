@@ -1,0 +1,10 @@
+.load {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Loading.module.css.map */

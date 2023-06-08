@@ -27,6 +27,7 @@ const Login = (props: Props) => {
                 nav("/");
             })
             .catch((e) => {
+                sessionStorage.setItem("key", "");
                 setMsg("E-mail ou senha esta incorreto");
                 nav("/login");
             });
@@ -51,7 +52,7 @@ const Login = (props: Props) => {
                     <span>Senha</span>
                     <input
                         placeholder={ms}
-                        type="text"
+                        type="password"
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                             setPassword(e.target.value)
                         }
@@ -59,7 +60,9 @@ const Login = (props: Props) => {
                 </label>
                 <button type="submit">Login</button>
             </form>
-            <Link to={"/cadastro"}>Cadastre-se</Link>
+            <Link to={"/cadastro"}>
+                <strong>Cadastre-se</strong>
+            </Link>
         </div>
     );
 };

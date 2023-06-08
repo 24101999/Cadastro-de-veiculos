@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Admin;
+use App\Http\Requests\AdminCadastro;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,21 +26,15 @@ class AdminController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            // 'expires_in' => auth('api')->factory()->getTTL() * 60
-            // 'expires_in' => auth('api')::guard()->factory()->getTTL() * 60
         ]);
+    }
+    public function cadastro(AdminCadastro $request)
+    {
 
-        // return response()->json([
-        //     'access_token' => $token,
-        //     'token_type' => 'bearer',
-        //     //'expires_in' => auth()->factory()->getTTL() * 60
-        //     // 'expires_in' => auth('api')->factory()->getTTL() * 60
-        // ]);
-
-        // return response()->json([
-        //     'access_token' => $token,
-        //     'token_type' => 'bearer',
-        //     'expires_in' => auth('api')->factory()->getTTL() * 60
-        // ]);
+        $us = new User;
+        $us->email = $request->email;
+        $us->password = password_hash($request->password, PASSWORD_DEFAULT);
+        $us->name = $request->name;
+        $us->save();
     }
 }
