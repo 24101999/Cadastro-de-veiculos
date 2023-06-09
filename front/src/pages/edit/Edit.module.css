@@ -34,6 +34,15 @@
 .edit form input::placeholder {
   color: rgba(255, 255, 255, 0.7882352941);
 }
+.edit form button {
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid white;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 5px;
+}
 .edit label {
   display: flex;
   flex-direction: column;

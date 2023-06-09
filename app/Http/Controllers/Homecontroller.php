@@ -11,7 +11,6 @@ class Homecontroller extends Controller
 {
     public function index()
     {
-        // header('Access-Control-Allow-Origin: *');
         echo Veiculo::all();
     }
     public function insert(val $request)
