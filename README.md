@@ -2,6 +2,8 @@
 
 <h2> Para iniciar o backend php artisan serve </h2>
 
+<h2> Para iniciar o banco de dados criar um banco no arquivo .env colocar nome do banco e rodar php artisan migrate </h2>
+
 <h3> tecnologias usadas: PHP/Laravel no Back-end e no Front-end React/TypeScript </h3>
 
 <p>
