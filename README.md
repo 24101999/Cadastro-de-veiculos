@@ -1,3 +1,4 @@
+
 <h2>Front na pasta front comando para iniciar npm start </h2>
 
 <h2> Para iniciar o Back-End rodar os comandos composer update, php artisan key:generate e php artisa serve </h2>
