@@ -13,7 +13,9 @@ além de tem uma tela de login onde você pode se cadastrar para acessar o siste
 
 <p> Rodar os comandos composer update, php artisan key:generate , php artisan jwt:secret , php artisan storage:link e php artisa serve </p>
 
-<h2> Para iniciar o banco de dados criar um banco no arquivo .env colocar nome do banco e rodar php artisan migrate </h2>
+<h2>Para iniciar o Banco</h2>
+
+<p> Criar um banco no arquivo .env colocar nome do banco e rodar php artisan migrate </p>
 
 <h3> tecnologias usadas: PHP/Laravel no Back-end e no Front-end React/TypeScript </h3>
 
