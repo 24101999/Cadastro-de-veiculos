@@ -7,7 +7,7 @@ além de tem uma tela de login onde você pode se cadastrar para acessar o siste
 
 <h2>Para iniciar o Front-End</h2>
 
-<p>Front na pasta front comando para iniciar npm start </p>
+<p>Na pasta front rodar comando npm install e para iniciar npm start </p>
 
 <h2>Para iniciar o Back-End</h2>
 
